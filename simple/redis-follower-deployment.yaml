@@ -1,7 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-slave
+  name: redis-follower
+  labels:
+    app: redis
+    role: follower
+    tier: backend
 spec:
   selector:
     matchLabels:

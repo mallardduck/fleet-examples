@@ -1,7 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: redis-master
+  name: redis-leader
+  labels:
+    app: redis
+    role: leader
+    tier: backend
 spec:
   selector:
     matchLabels:
